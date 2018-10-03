@@ -1,0 +1,11 @@
+{
+  "name": "react-patterns",
+  "version": "1.0.0",
+  "description": "Recopilation of React Patterns",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "R Berlochi",
+  "license": "MIT"
+}
