@@ -7,5 +7,11 @@
     "test": "test"
   },
   "author": "R Berlochi",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "babel-plugin-transform-react-cache": "~1.1.0",
+    "babel-plugin-transform-react-jsx": "~6.24.1",
+    "react": "~16.5.2",
+    "react-cache": "~1.1.2"
+  }
 }
