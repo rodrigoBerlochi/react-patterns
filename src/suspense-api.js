@@ -11,6 +11,8 @@ let resourceN = createResource(
     }
 );
 
+// when the id prop chances, a new request is triggered and the cache is updated
+// 
 let MyComponent = ({id}) => {
     let data = resourceN.read(cache, id);
 

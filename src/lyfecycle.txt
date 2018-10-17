@@ -1,0 +1,60 @@
+_______________________________________________________________________
+RENDER PHASE (pure, no side effects, react can pause, abort and restart it)
+Mounting:
+-constructor
+    *musn't: setState, assign props to state (ignores prop update!)
+    *must: super(props)
+    *op: binding events & this.state
+
+-getDerivedStateFromProps
+
+Updating:
+caused by: new Props - setState() - forceUpdate()
+
+-getDerivedStateFromProps(props, state):null|object
+    (when state depends on props change over time)
+    -static
+
+-shouldComponentUpdate(nextProps, nextState): boolean
+    * not in initial r() nor forceUpdte()
+    -better use PureComponent (shallow comparision)
+    -do not affect childrend with own state
+
+-render(): element||boolean||null||array||fragments||string||number||portal
+    (pure = no change state NOR access DOM)
+_______________________________________________________________________
+PRE COMMIT PHASE (read only DOM)
+Updating:
+-getSnapshotBeforUpdate(prevProps, prevState): any||null
+_______________________________________________________________________
+COMMIT PHASE (access to the DOM, schedule updates for it, side effects)
+Mounting:
+(actual DOM updates)
+-componentDidMount
+    *async calls
+    *DOM readings
+    *subscriptions
+    *setState()
+
+Updating:
+(actual DOM updates)
+-componentDidUpdate(prevProps, prevState, snapshot): void
+
+Unmounting:
+-componentWillUnmount
+    *un-subscriptions!!
+    *invalidate timers
+    *cancel request unfinished
+_______________________________________________________________________
+componentDidCatch(error, info)
+    -error boundaries
+    -just for unexpected errors
+    -catch errors on childrend
+    -log error, setState, show UI
+
+_______________________________________________________________________
+UNSAFE
+
+UNSAFE_componentWillMount()
+UNSAFE_componentWillReceiveProps(nextProps)
+UNSAFE_componentWillUpdate(nextProps, nextState)

@@ -1,0 +1,51 @@
+FUNTIONAL PARADIGM
+"fn as first-citizen" -> fn as a variable, as argument and returned value of another fn
+Application = composition and chaining of fns
+
+Pure functions -> acts on arguments only and returns deterministicaly a result. No side effects, no randomness
+parameters-> process-> output
+params must be handle as inmmutable data
+easier testing!
+
+fns can be also arguments and returned value fo another fns
+
+closure & scope: key concepts
+
+fn features in JS:
+const n = () => {}
+let m = b => (returnValue);
+..rest, ...args, [...array], {..obj}
+.map
+.reduce
+.filter (instead of .pop, .slice)
+.join
+from object to arrays: object.keys(), object.values(), object.entry()
+
+HOF:
+fn that takes and/or returns another functions
+ej: lodash
+ej: redux-thunks, redux createStore()(), react functional components, redux middlewares
+
+Patterns:
+curryfication
+
+Fn > Declarative programming (vs Imperative)
+
+Immutability
+data does not change, make a copy and return new value
+[...array], {..obj}, Object.assign(), Array.from, Array.concat
+
+React UI ==> declared with Pure Functions (also class option)
+(props) => ({
+    <h1>props.title</h1>
+})
+
+Recursion
+    call stack errors        
+
+Composition
+    techniques like
+        chaining string.replace().replace()
+        piping   log(i18n(key));
+        composer fns    const hof = compose(fn1, fn2, fn3); hof(param)
+        
