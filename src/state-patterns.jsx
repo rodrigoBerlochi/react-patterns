@@ -26,7 +26,7 @@ types:
  // Patter 3: stateless components
  /*
 Container are also stateless components, using functions instead of classes (Pattern 2) and no 
-internal state. Thats a chaos because every component is ajust a function that can read the global
+internal state. Thats a chaos because every component is just a function that can read the global
 state, which is the only one. Can't reset partial state on componentWillUnmount, we can just read 
 global state. 
  */
