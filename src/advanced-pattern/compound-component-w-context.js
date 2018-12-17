@@ -1,5 +1,16 @@
 import React from 'react';
 
+/*
+Compound pattern can be achieved using Context
+The advantage, is that context makes its values available to all level children
+no matter the nesting level, it means not only to immediate children
+
+There are 3 big steps to remind:
+1- create a context
+2- create a HOC to implement the .consumer, it passes children spreads props and context!
+3- inside the render, wrap children into the .provider which gets the parent state and utility methods as value
+*/
+
 // create a context
 const GardenContext = React.createContext();
 
